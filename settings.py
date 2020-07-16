@@ -13,3 +13,8 @@ THEMES = {
         "VSCODE": "Solus OS Dark"
     }
 }
+
+TIME_HOUR_LIGHT_THEME = {
+    "START": 6
+    "END": 17
+}

@@ -1,5 +1,7 @@
+#!/usr/bin/python3.8
+
 from datetime import datetime
-from settings import THEMES, VSCODE_CONFIG_FILE
+from settings import THEMES, VSCODE_CONFIG_FILE, TIME_HOUR_LIGHT_THEME
 from json import dump, load
 from os import system
 
@@ -8,7 +10,7 @@ def get_theme():
 
     hour = datetime.now().hour
 
-    if hour >= 6 and hour < 18:
+    if hour >= TIME_HOUR_LIGHT_THEME['START'] and hour < TIME_HOUR_LIGHT_THEME['END']:
         return THEMES['LIGHT']
 
     return THEMES['DARK']
@@ -34,7 +36,5 @@ def set_desktop_theme():
         'gsettings set org.gnome.desktop.interface gtk-theme "{0}"'.format(get_theme()['DESKTOP']))
 
 
-if __name__ == "__main__":
-
-    set_desktop_theme()
-    set_vscode_theme()
+set_desktop_theme()
+set_vscode_theme()
