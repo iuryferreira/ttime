@@ -15,6 +15,6 @@ THEMES = {
 }
 
 TIME_HOUR_LIGHT_THEME = {
-    "START": 6
+    "START": 6,
     "END": 17
 }
